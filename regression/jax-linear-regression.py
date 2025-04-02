@@ -1,6 +1,7 @@
 import jax
 import jax.numpy as jnp
 import jax.random as random
+import matplotlib.pyplot as plt
 import os
 
 
@@ -10,6 +11,7 @@ def mock_data(n_samples = 100, n_features=1, seed=0):
     true_w = jnp.array([2.0]) #True weight
     true_b = 3.0 #True bias
     y = jnp.dot(X, true_w) + true_b + 0.1 * random.normal(key, (n_samples,)) 
+    print(3* random.normal(key, (n_samples,)) )
     return X, y
 
 class Jax_Linear_Regression():
@@ -21,7 +23,8 @@ class Jax_Linear_Regression():
 
     def predict(self, X):
         # Compute predictions
-        pass
+        y_pred = self.w * X + self.b
+        return y_pred 
 
     def loss(self, X, y):
         # Compute loss (MSE)
@@ -43,8 +46,17 @@ class Jax_Linear_Regression():
         # Evaluate model performance 
         pass
 
+def plot_data(X, y):
+    fig, ax = plt.subplots()
+    ax.scatter(X, y)
+    plt.show()
+
+
 def main():
     X, y = mock_data()
+    
+    plot_data(X, y)
+
     print("Everything ran successfully!")
 
 
