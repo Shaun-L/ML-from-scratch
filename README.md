@@ -5,7 +5,8 @@ I am using this repository to learn and write all ML stuff from scratch just usi
 I am also planning to write everything only using vim and cli only, but we'll see how long that lasts
 
 - Day I started: `3/24/2025`
-- Day I stopped using vim: `N/A`
+- Day I stopped using vim: `4/1/25`
+    - At least a I lasted a week lol. I just switched over to using Vim Motions on VSCode
 
 ## Launching venv
 

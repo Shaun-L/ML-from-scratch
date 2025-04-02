@@ -4,10 +4,6 @@ import jax.random as random
 import os
 
 
-
-
-
-
 def mock_data(n_samples = 100, n_features=1, seed=0):
     key = random.PRNGKey(seed)
     X = random.normal(key, (n_samples, n_features)) #Generates random features
@@ -16,8 +12,40 @@ def mock_data(n_samples = 100, n_features=1, seed=0):
     y = jnp.dot(X, true_w) + true_b + 0.1 * random.normal(key, (n_samples,)) 
     return X, y
 
+class Jax_Linear_Regression():
+    def __init__(self, n_features: int) -> None:
+        # Initialize weights and bias
+        key = jax.random.key(seed=42)
+        w = jax.random.randint(key=key, shape=(n_features, 1))       
+        b = jax.random.randint(key=key, shape=(n_features, 1))
+
+    def predict(self, X):
+        # Compute predictions
+        pass
+
+    def loss(self, X, y):
+        # Compute loss (MSE)
+        pass
+
+    def gradients(self, X, y):
+        # Compute gradients
+        pass
+
+    def update(self, X, y, alpha):
+        # Update parameters w/ Gradient Descent
+        pass
+
+    def fit(self, X, y, epochs=100, alpha=0.01):
+        # Train model over multiple epochs
+        pass
+
+    def score(self, X, y):
+        # Evaluate model performance 
+        pass
+
 def main():
     X, y = mock_data()
-    print(f"Input Features: {X}")
-    print(f"Output Labels: {y}")
+    print("Everything ran successfully!")
+
+
 main()
